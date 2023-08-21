@@ -37,7 +37,7 @@ def merge_alternately(word1, word2)
     merged = ""
     i = 0
 
-    while i < word1.length && i < word2.length
+    while word1[i] && word2[i]
         merged += word1[i]
         merged += word2[i]
 
