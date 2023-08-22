@@ -26,6 +26,7 @@
 # end
 # @param {ListNode} head
 # @return {ListNode}
+
 def reverse_list(head)
     return head if head == nil || head.next == nil
     
