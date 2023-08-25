@@ -29,3 +29,17 @@
 # 2 <= n <= 100
 # 1 <= candies[i] <= 100
 # 1 <= extraCandies <= 50
+
+# @param {Integer[]} candies
+# @param {Integer} extra_candies
+# @return {Boolean[]}
+def kids_with_candies(candies, extra_candies)
+    results = []
+    max = candies.max
+
+    candies.each do |candy|
+        candy + extra_candies >= max ? results.push(true) : results.push(false)
+    end
+
+    results
+end
