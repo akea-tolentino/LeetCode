@@ -29,3 +29,29 @@
 # skill.length is even.
 # 1 <= skill[i] <= 1000
 
+def divide_players(skill)
+    
+    sorted = skill.sort()
+
+    pointer1 = 0
+    pointer2 = sorted.length - 1
+
+    comparer = sorted[pointer1] + sorted[pointer2]
+
+    totalChemistry = 0
+
+    while pointer1 < pointer2
+        number1 = sorted[pointer1]
+        number2 = sorted[pointer2]
+
+        if number1 + number2 == comparer
+            totalChemistry += (number1 * number2)
+            pointer1 += 1
+            pointer2 -= 1
+        else
+            return -1
+        end
+    end
+
+    return totalChemistry
+end
