@@ -22,24 +22,50 @@
 // Constraints:
 // 0 <= n <= 105
 
-var countBits = function(n) {
-    const ans = [0];
+var countBits = function(n) { // optimized
+    let ans = [0, 1];
 
-    if (n === 0) return ans;
+    if (n === 0) {
+        return [0];
+    } else if (n === 1) return ans;
 
-    let i = 1;
+    let i = 2;
+
+    let temp = [1];
 
     while (i <= n) {
-        let bString = i.toString(2).split('');
-        let isInString = 0;
 
-        bString.forEach((bin) => {
-            if (bin === '1') isInString++
-        });
+        temp = temp.concat(temp.map(num => ( num + 1 )));
 
-        ans.push(isInString);
-        i++;
+        ans = ans.concat(temp);
+
+        i *= 2;
+
     };
+
+    ans.splice(n + 1);
 
     return ans;
 };
+
+// var countBits = function(n) {
+//     const ans = [0];
+
+//     if (n === 0) return ans;
+
+//     let i = 1;
+
+//     while (i <= n) {
+//         let bString = i.toString(2).split('');
+//         let isInString = 0;
+
+//         bString.forEach((bin) => {
+//             if (bin === '1') isInString++
+//         });
+
+//         ans.push(isInString);
+//         i++;
+//     };
+
+//     return ans;
+// };
