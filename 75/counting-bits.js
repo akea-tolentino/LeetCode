@@ -22,3 +22,24 @@
 // Constraints:
 // 0 <= n <= 105
 
+var countBits = function(n) {
+    const ans = [0];
+
+    if (n === 0) return ans;
+
+    let i = 1;
+
+    while (i <= n) {
+        let bString = i.toString(2).split('');
+        let isInString = 0;
+
+        bString.forEach((bin) => {
+            if (bin === '1') isInString++
+        });
+
+        ans.push(isInString);
+        i++;
+    };
+
+    return ans;
+};
