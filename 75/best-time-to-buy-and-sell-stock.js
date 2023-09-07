@@ -18,3 +18,23 @@
 // 1 <= prices.length <= 105
 // 0 <= prices[i] <= 104
 
+var maxProfit = function(prices) {
+
+    let currentMin = prices[0];
+    let max_profit = 0;
+
+    prices.forEach((price) => {
+        
+        if (price < currentMin) {
+            currentMin = price
+        }
+
+        let difference = price - currentMin
+
+        if (difference > max_profit) {
+            max_profit = difference
+        }
+    })
+
+    return max_profit;
+};
