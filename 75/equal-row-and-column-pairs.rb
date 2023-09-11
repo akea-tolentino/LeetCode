@@ -23,3 +23,21 @@
 # 1 <= n <= 200
 # 1 <= grid[i][j] <= 105
 
+def equal_pairs(grid)
+    
+    occurences = 0
+
+    rows = {}
+
+    grid.each do |row|
+        if rows[row]
+            rows[row] += 1
+        else
+            rows[row] = 1
+        end
+    end
+
+    grid.transpose.each { |col| occurences += rows[col] if rows[col] }
+
+    return occurences
+end
