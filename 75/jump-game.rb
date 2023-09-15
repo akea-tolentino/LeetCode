@@ -17,3 +17,17 @@
 # Constraints:
 # 1 <= nums.length <= 104
 # 0 <= nums[i] <= 105
+
+def can_jump(nums)
+    return true if nums.length == 1
+
+    target = nums.length - 1
+    curr = target - 1
+
+    while curr >= 0
+        target = curr if curr + nums[curr] >= target
+        curr -= 1
+    end
+
+    return target == 0
+end
