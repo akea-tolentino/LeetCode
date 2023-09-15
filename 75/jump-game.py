@@ -17,3 +17,17 @@
 # Constraints:
 # 1 <= nums.length <= 104
 # 0 <= nums[i] <= 105
+
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        if len(nums) == 1: return True
+
+        target = len(nums) - 1
+        curr = target - 1
+
+        for curr in range(curr, -1, -1):
+        
+            if curr + nums[curr] >= target:
+                target = curr
+        
+        return target == 0
