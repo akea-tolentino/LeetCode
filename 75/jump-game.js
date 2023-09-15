@@ -17,3 +17,19 @@
 // Constraints:
 // 1 <= nums.length <= 104
 // 0 <= nums[i] <= 105
+
+var canJump = function(nums) {
+
+    if (nums.length === 1) return true;
+
+    let target = nums.length - 1;
+    let curr = target - 1;
+
+    for (curr; curr >= 0; curr--) {
+        if (curr + nums[curr] >= target) {
+            target = curr
+        }
+    }
+
+    return target === 0
+};
