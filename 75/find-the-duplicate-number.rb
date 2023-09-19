@@ -22,3 +22,17 @@
 
 # All the integers in nums appear only once except for precisely
 # one integer which appears two or more times.
+
+def find_duplicate(nums)
+
+    inputs = Hash.new(0)
+
+    nums.each do |num|
+        if inputs[num] == 0
+            inputs[num] += 1
+        else
+            return num
+        end
+    end
+    
+end
