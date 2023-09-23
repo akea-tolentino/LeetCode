@@ -25,3 +25,29 @@
 // The number of the nodes in the list is in the range [0, 104].
 // -105 <= Node.val <= 105
 // pos is -1 or a valid index in the linked-list.
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var hasCycle = function(head) {
+    let slow = head;
+    let fast = head;
+
+    while (fast != undefined  && fast.next != undefined) {
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if (slow === fast) return true
+    }
+
+    return false;
+};
