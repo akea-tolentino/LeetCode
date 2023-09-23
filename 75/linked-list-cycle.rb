@@ -25,3 +25,36 @@
 # The number of the nodes in the list is in the range [0, 104].
 # -105 <= Node.val <= 105
 # pos is -1 or a valid index in the linked-list.
+
+# Definition for singly-linked list.
+# class ListNode
+#     attr_accessor :val, :next
+#     def initialize(val)
+#         @val = val
+#         @next = nil
+#     end
+# end
+
+# @param {ListNode} head
+# @return {Boolean}
+
+def hasCycle(head)
+    # create a slow pointer
+    # create a fast pointer
+    # while fast && fast.next
+    # iterate through linked list with both pointers
+    # if slow == fast return true
+    # return false if while loop ends without returning true
+
+    slow = head
+    fast = head
+
+    while fast && fast.next
+
+        slow = slow.next
+        fast = fast.next.next
+        return true if slow == fast
+    end
+
+    return false
+end
