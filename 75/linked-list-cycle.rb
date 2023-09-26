@@ -61,12 +61,16 @@ def hasCycle(head)
 
 
     # alternate solution: set
-    
+
     # curr_node = head
     # nodes_seen = Set.new()
 
     # while curr_node && curr_node.next
-    # nodes_seen.include?(curr_node) ? true : nodes_seen.add(curr_node)
+    # if nodes_seen.include?(curr_node)
+    # return true
+    # else
+    # nodes_seen.add(curr_node)
+    # curr_node = curr_node.next
     # end
 
     # false

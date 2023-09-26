@@ -50,4 +50,22 @@ var hasCycle = function(head) {
     }
 
     return false;
+
+
+    // alternate solution: set
+
+    // const nodesSeen = new Set();
+    // let currNode = head;
+
+    // while (currNode && currNode.next) {
+    // if (nodesSeen.has(currNode)) {
+    // return true
+    // } else {
+    // nodesSeen.add(currNode);
+    // currNode = currNode.next
+    // }
+    // }
+
+    // return false
+
 };
